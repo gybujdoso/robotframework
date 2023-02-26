@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230226 17:20:34.737" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="C:\Users\Bujdosó Gyula\Desktop\SOTERLINE ÓRÁK\17. nap\robotteszt\login.robot">
+<test id="s1-t1" name="Verify Open" line="7">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://the-internet.herokuapp.com/login</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230226 17:20:34.852" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" starttime="20230226 17:20:34.852" endtime="20230226 17:20:37.813"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>The Internet</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230226 17:20:37.818" level="INFO">Page title is 'The Internet'.</msg>
+<status status="PASS" starttime="20230226 17:20:37.813" endtime="20230226 17:20:37.818"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>timeout=3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230226 17:20:37.819" endtime="20230226 17:20:37.832"/>
+</kw>
+<status status="PASS" starttime="20230226 17:20:34.852" endtime="20230226 17:20:37.832"/>
+</test>
+<test id="s1-t2" name="Verify Login" line="11">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>tomsmith</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230226 17:20:37.833" level="INFO">Typing text 'tomsmith' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20230226 17:20:37.833" endtime="20230226 17:20:37.869"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>timeout=3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230226 17:20:37.870" endtime="20230226 17:20:37.883"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>SuperSecretPassword!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230226 17:20:37.884" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20230226 17:20:37.883" endtime="20230226 17:20:37.919"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:button[type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230226 17:20:37.920" level="INFO">Clicking element 'css:button[type="submit"]'.</msg>
+<status status="PASS" starttime="20230226 17:20:37.920" endtime="20230226 17:20:38.272"/>
+</kw>
+<status status="PASS" starttime="20230226 17:20:37.832" endtime="20230226 17:20:38.272"/>
+</test>
+<test id="s1-t3" name="Verify Logged" line="16">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:h2</arg>
+<arg>timeout=3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230226 17:20:38.273" endtime="20230226 17:20:38.283"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css:h2</arg>
+<arg>Secure Area</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230226 17:20:38.284" level="INFO">Verifying element 'css:h2' contains exact text 'Secure Area'.</msg>
+<status status="PASS" starttime="20230226 17:20:38.283" endtime="20230226 17:20:38.293"/>
+</kw>
+<status status="PASS" starttime="20230226 17:20:38.273" endtime="20230226 17:20:38.293"/>
+</test>
+<test id="s1-t4" name="Verify Logout" line="19">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:[href="/logout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230226 17:20:38.295" level="INFO">Clicking element 'css:[href="/logout"]'.</msg>
+<status status="PASS" starttime="20230226 17:20:38.294" endtime="20230226 17:20:38.614"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css:h2</arg>
+<arg>timeout=3</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230226 17:20:38.625" level="INFO">Element 'css:h2' is displayed.</msg>
+<status status="PASS" starttime="20230226 17:20:38.615" endtime="20230226 17:20:38.625"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Login Page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230226 17:20:38.625" endtime="20230226 17:20:38.630"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css:h2</arg>
+<arg>Login Page</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230226 17:20:38.631" level="INFO">Verifying element 'css:h2' contains exact text 'Login Page'.</msg>
+<status status="PASS" starttime="20230226 17:20:38.631" endtime="20230226 17:20:38.640"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230226 17:20:38.640" endtime="20230226 17:20:40.735"/>
+</kw>
+<status status="PASS" starttime="20230226 17:20:38.294" endtime="20230226 17:20:40.736"/>
+</test>
+<status status="PASS" starttime="20230226 17:20:34.738" endtime="20230226 17:20:40.739"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
